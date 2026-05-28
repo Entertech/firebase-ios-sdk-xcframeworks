@@ -1,6 +1,6 @@
 # How the Package is generated
 
-The `Package.swift` and `Sources` files are automatically generated via a [script](https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks/blob/master/.scripts/package.sh), which is set to run in a scheduled cron job via Github Actions. 
+The `Package.swift` and `Sources` files are automatically generated via a [script](https://github.com/Entertech/firebase-ios-sdk-xcframeworks/blob/master/.scripts/package.sh), which is set to run in a scheduled cron job via Github Actions.
 
 The script performs the following actions:
 - Downloads the latest release from https://github.com/firebase/firebase-ios-sdk
@@ -37,7 +37,7 @@ Any and all input is welcome, including:
 4. Create the pull request.
 
 ## Issues
-Report a bug by [opening a new issue](https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks/issues). Include steps to reproduce the error (and if possible sample code is always appreciated). To help with reproducing and testing issues there is an example project included in this repo: https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks/tree/master/iOS%20Example
+Report a bug by [opening a new issue](https://github.com/Entertech/firebase-ios-sdk-xcframeworks/issues). Include steps to reproduce the error (and if possible sample code is always appreciated). To help with reproducing and testing issues there is an example project included in this repo: https://github.com/Entertech/firebase-ios-sdk-xcframeworks/tree/master/iOS%20Example
 
 ## License
 By contributing, you agree that your contributions will be licensed under the project's [MIT License](http://choosealicense.com/licenses/mit/).

@@ -1,15 +1,15 @@
 # Firebase xcframework integration with SPM
 
-A small mirror for https://github.com/firebase/firebase-ios-sdk, to add support for using their binary dependencies (xcframeworks) with swift package manager. 
+A small mirror for https://github.com/firebase/firebase-ios-sdk, to add support for using their binary dependencies (xcframeworks) with swift package manager.
 
-This repo contains a [Package.swift](https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks/blob/master/Package.swift) file, which uses a `binaryTarget` for all Firebase libraries (xcframework files are hosted in github [releases](https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks/releases)). 
+This repo contains a [Package.swift](https://github.com/Entertech/firebase-ios-sdk-xcframeworks/blob/master/Package.swift) file, which uses a `binaryTarget` for all Firebase libraries (xcframework files are hosted in github [releases](https://github.com/Entertech/firebase-ios-sdk-xcframeworks/releases)).
 
 ## Official SPM Support
 
 Firebase currently supports SPM integration, see the [official SDK integration instructions](https://github.com/firebase/firebase-ios-sdk#installation). This repo is an alternative for integrating with their pre-built xcframeworks for faster build times. See in depth discussion for official SPM support for xcframeworks [here](https://github.com/firebase/firebase-ios-sdk/issues/6564).
 
 # Installation
-- Add the package: 
+- Add the package:
     ```
     // swift-tools-version:5.3
     // The swift-tools-version declares the minimum version of Swift required to build this package.
@@ -25,7 +25,7 @@ Firebase currently supports SPM integration, see the [official SDK integration i
         dependencies: [
             .package(
                 name: "Firebase",
-                url: "https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks.git",
+                url: "https://github.com/Entertech/firebase-ios-sdk-xcframeworks.git",
                 .exact("8.10.0")
             ),
         ],
