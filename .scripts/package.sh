@@ -314,7 +314,7 @@ set -o pipefail
 
 # Repos
 firebase_repo="https://github.com/firebase/firebase-ios-sdk"
-xcframeworks_repo="https://github.com/akaffenberger/firebase-ios-sdk-xcframeworks"
+xcframeworks_repo="https://github.com/Entertech/firebase-ios-sdk-xcframeworks"
 
 # Release versions
 latest=$(latest_release_number $firebase_repo)

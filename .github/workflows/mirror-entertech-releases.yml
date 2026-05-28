@@ -1,0 +1,53 @@
+name: Mirror Entertech Releases
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_version:
+        description: First version to mirror, inclusive
+        required: true
+        default: "12.7.0"
+      to_version:
+        description: Last version to mirror, inclusive. Leave empty to use latest upstream release.
+        required: false
+        default: ""
+      dry_run:
+        description: Print the selected versions without pushing tags or uploading assets
+        required: true
+        type: choice
+        default: "false"
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror-entertech-releases
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Mirror release tags and assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FROM_VERSION: ${{ inputs.from_version }}
+          TO_VERSION: ${{ inputs.to_version }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          UPSTREAM_REPO: akaffenberger/firebase-ios-sdk-xcframeworks
+          TARGET_REPO: ${{ github.repository }}
+        run: ./.scripts/mirror_entertech_releases.sh
